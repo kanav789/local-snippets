@@ -1,0 +1,68 @@
+{ 
+  "name": "local-snippets",
+  "displayName": "Local Snippets",
+  "description": "Insert local file-based code snippets from a custom folder using the Command Palette",
+  "version": "0.0.1",
+  "publisher": "Kanavkumarrana",
+  "icon": "assets/icon.png",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+
+  "main": "./out/extension.js",
+
+  "activationEvents": [
+    "onCommand:local-snippets.insertSnippet"
+  ],
+
+  "files": [
+    "out"
+  ],
+
+  "contributes": {
+    "commands": [
+      {
+        "command": "local-snippets.insertSnippet",
+        "title": "Local Snippets: Insert Snippet"
+      }
+    ],
+    "configuration": {
+      "title": "Local Snippets",
+      "properties": {
+        "localSnippets.snippetsPath": {
+          "type": "string",
+          "default": "",
+          "description": "Absolute path to the folder containing your snippet files"
+        },
+        "localSnippets.insertMode": {
+          "type": "string",
+          "enum": ["insert", "copy"],
+          "default": "insert",
+          "description": "Insert snippet at cursor or copy it to clipboard"
+        }
+      }
+    }
+  },
+
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/node": "22.x",
+    "@types/mocha": "^10.0.10",
+    "typescript": "^5.9.3",
+    "eslint": "^9.39.1",
+    "typescript-eslint": "^8.48.1",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
