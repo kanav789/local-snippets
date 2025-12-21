@@ -17,6 +17,8 @@ Quickly insert your own local code snippets using the VS Code Command Palette.
 ## Example Folder Structure
 snippets/
 ├── react/
+
 │ ── useEffect.ts
 ├── backend/
+
 │ ── express.ts
