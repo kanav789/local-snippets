@@ -18,10 +18,6 @@
     "onCommand:local-snippets.insertSnippet"
   ],
 
-  "files": [
-    "out"
-  ],
-
   "contributes": {
     "commands": [
       {
